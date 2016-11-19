@@ -67,5 +67,18 @@ var handlers = {
     var todoText = document.getElementById('addTodoTextInput');
     todoList.addTodos(todoText.value);
     todoText.value = '';
+  },
+  changeTodo: function() {
+    var todoTextPosition = document.getElementById('changeTodoPositionInput')
+    var todoTextInput = document.getElementById('changeTodoTextInput');
+    todoList.changeTodo(todoTextPosition.valueAsNumber, todoTextInput.value);
+    todoTextPosition.value = '';
+    todoTextInput.value = '';
+  },
+  deleteTodo: function() {
+    var deleteTodoInput = document.getElementById('changeTodoTextInput');
+    todoList.deleteTodo(deleteTodoInput.valueAsNumber);
+    deleteTodoInput.value = '';
+
   }
 }

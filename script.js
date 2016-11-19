@@ -1,7 +1,6 @@
 var todoList = {
   todos: [],
   displayTodos: function() {
-    debugger;
   if (this.todos.length == 0) {
     console.log('Your Todo list is empty! ');
   } else {
@@ -57,16 +56,11 @@ var todoList = {
   }
 };
 
-
-var displayTodosButton = document.getElementById('displayTodosButton');
-
-var toggleAllButton = document.getElementById('toggleAllButton');
-
-displayTodosButton.addEventListener('click', function() {
-
-  todoList.displayTodos();
-});
-
-toggleAllButton.addEventListener('click', function() {
-  todoList.toggleAll();
-});
+var handlers = {
+  displayTodos: function() {
+    todoList.displayTodos();
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+  }
+}

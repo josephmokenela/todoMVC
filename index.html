@@ -10,8 +10,16 @@
 	<body>
 		<h1>Todo List</h1>
 
-		<button onclick="handlers.displayTodos()">Display Todos</button>
+      <div>
+      	<button onclick="handlers.displayTodos()">Display Todos</button>
 		<button onclick="handlers.toggleAll()">Toggle All</button>
+      </div>
+
+      <div>
+      	<button onclick="handlers.addTodos()">Add</button>
+      	<input type="text" id="addTodoTextInput" name="addTodoTextInput">
+      </div>
+		
 
 		<script type="text/javascript" src="script.js"></script>
 	</body>

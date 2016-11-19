@@ -62,5 +62,10 @@ var handlers = {
   },
   toggleAll: function() {
     todoList.toggleAll();
+  },
+  addTodos: function() {
+    var todoText = document.getElementById('addTodoTextInput');
+    todoList.addTodos(todoText.value);
+    todoText.value = '';
   }
 }

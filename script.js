@@ -86,4 +86,18 @@ var handlers = {
     todoList.toggleCompleted(toggleCompletedInput.valueAsNumber);
     toggleCompletedInput.value = '';
   }
-}
+};
+
+var view = {
+  displayTodos: function() {
+
+     var todoUl =  document.querySelector('ul');
+     todoUl.innerHTML = '';
+
+    for(var i = 0; i < todoList.todos.length; i++) {
+      var todoLi = document.createElement('li');
+      todoUl.appendChild(todoLi);
+    }
+    
+  }
+};

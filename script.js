@@ -96,6 +96,16 @@ var view = {
 
     for(var i = 0; i < todoList.todos.length; i++) {
       var todoLi = document.createElement('li');
+      var todo = todoList.todos[i];
+      var todoTextWithCompletion = '';
+
+      if (todo.completed) {
+        todoTextWithCompletion = '(x) ' + todo.todoText;
+      } else {
+        todoTextWithCompletion = '( ) ' + todo.todoText;
+      }
+      
+      todoLi.textContent = todoTextWithCompletion;
       todoUl.appendChild(todoLi);
     }
     

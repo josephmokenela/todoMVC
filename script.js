@@ -75,22 +75,21 @@ var view = {
      var todoUl =  document.querySelector('ul');
      todoUl.innerHTML = '';
 
-    for(var i = 0; i < todoList.todos.length; i++) {
-      var todoLi = document.createElement('li');
-      var todo = todoList.todos[i];
-      var todoTextWithCompletion = '';
+      todoList.todos.forEach(function(todo, position) {
+          var todoLi = document.createElement('li');
+          var todoTextWithCompletion = '';
 
-      if (todo.completed) {
-        todoTextWithCompletion = '(x) ' + todo.todoText;
-      } else {
-        todoTextWithCompletion = '( ) ' + todo.todoText;
-      }
+          if (todo.completed) {
+            todoTextWithCompletion = '(x) ' + todo.todoText;
+          } else {
+            todoTextWithCompletion = '( ) ' + todo.todoText;
+          }
 
-      todoLi.id = i;
-      todoLi.textContent = todoTextWithCompletion;
-      todoLi.appendChild(this.createDeleteButton());
-      todoUl.appendChild(todoLi);
-    }
+          todoLi.id = position;
+          todoLi.textContent = todoTextWithCompletion;
+          todoLi.appendChild(this.createDeleteButton());
+          todoUl.appendChild(todoLi);
+      }, this);
     
   },
   createDeleteButton: function() {
